@@ -9,13 +9,20 @@ export FZF_DEFAULT_OPTS=" --prompt='➼ ' --pointer=' ' --marker='󰸞 ' --bo
 "
 export QT_QPA_PLATFORMTHEME='qt5ct'
 export PATH="$PATH:/home/chilly/Themes/scripts:/home/chilly/Scripts"
-# export BROWSER="chromium"
+export BROWSER="firefox"
 export VISUAL="nvim"
+export MOZ_ENABLE_WAYLAND=1
 export EDITOR="nvim"
 export DRI_PRIME=1
 
+set --universal pure_color_success green
+set --universal pure_color_current_directory black
+set --universal pure_symbol_prompt "  "
+set --universal pure_symbol_reverse_prompt "  "
+
 if status is-interactive
   alias cleanram="sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+  # alias n="footclient -o "colors.alpha=1" -H nvim"
   alias n="nvim"
   alias ls="exa --color=always"
   alias ll="exa -l --color=always"
@@ -23,6 +30,7 @@ if status is-interactive
   alias lla="exa -la --color=always"
   alias hc="nvim /home/chilly/.config/hypr/hyprland.conf"
   alias fc="nvim /home/chilly/.config/fish/config.fish"
+  alias cc="cd /home/chilly/Codes/"
   alias pac="sudo pacman -Sy --color always"
   alias fpac="fzpac S"
   alias clean='sudo pacman --color always -Rns $(pacman -Qtdq)'
@@ -31,12 +39,13 @@ if status is-interactive
   alias lt="ls --tree"
   alias re="sh ~/Templates/terminal/terminal_theme.sh"
   alias iv="lsix"
-  alias cat="bat --color always --plain"
+  alias gettoken="cat ~/Documents/gittoken | wl-copy"
+  alias bat="bat --color always --plain"
   alias grep='grep --color=auto'
   alias mv='mv -v'
   alias cp='cp -vr'
   alias o='sh /home/chilly/Scripts/launch'
-  alias rm='trash-put'
+  alias del='trash-put'
   alias tupd='topgrade --skip-notify -y'
   alias upd='sudo pacman -Suuy'
   alias commit="git add . && git commit -m"

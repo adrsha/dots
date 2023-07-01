@@ -1,0 +1,101 @@
+/* Mocha Flamingo */
+@define-color accent #cad3f5;
+@define-color dim #71747D;
+@define-color txt #cad3f5;
+@define-color bg #101019;
+@define-color bg2 #101019;
+
+* {
+  font-family: "Barlow", monospace;
+  font-size: 14px;
+}
+
+/* Window */
+window {
+  margin: 0px;
+  border-radius: 0px;
+  padding: 5px;
+  /* background-color: rgba(13, 13, 20, 0.5); */
+  background-color: @bg;
+}
+
+expander list row {
+  background-color: #cad3f5;
+}
+/* Slide In */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Inner Box */
+#inner-box {
+  border: none;
+  /* background-color: @bg; */
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Outer Box */
+#outer-box {
+  margin: 7px;
+  padding: 0px;
+  border: none;
+  /* background-color: @bg; */
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+}
+
+#prompt {
+  background-color: @bg2;
+}
+/* Input */
+#input {
+  padding: 10px;
+  border: none;
+  color: @dim;
+  font-size: 24;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 20px;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  color: @txt;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Selected Entry */
+#entry:selected {
+  background-color: @accent;
+}
+
+#entry:selected #text {
+  color: @bg;
+}

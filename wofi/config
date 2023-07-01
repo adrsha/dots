@@ -1,0 +1,11 @@
+show=drun
+width=500
+height=600
+dynamic_lines=true
+insensitive=true
+prompt=
+normal_window=true
+allow_images= true
+key_exit=Escape
+key_expand=Tab
+display_generic=true
