@@ -1,0 +1,15 @@
+2023/08/03-19:40:57.155 13218 Reusing MANIFEST /home/chilly/.config/Microsoft/Microsoft Teams/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/03-19:41:06.674 13281 Level-0 table #5: started
+2023/08/03-19:41:06.694 13281 Level-0 table #5: 64313 bytes OK
+2023/08/03-19:41:06.705 13281 Delete type=0 #3
+2023/08/03-19:41:06.706 13281 Manual compaction at level-0 from '\x00%\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/03-19:41:12.582 13281 Level-0 table #7: started
+2023/08/03-19:41:12.602 13281 Level-0 table #7: 528743 bytes OK
+2023/08/03-19:41:12.613 13281 Delete type=0 #4
+2023/08/03-19:41:12.614 13281 Manual compaction at level-0 from '\x00.\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00/\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/03-19:41:13.698 13281 Compacting 1@1 + 1@2 files
+2023/08/03-19:41:13.720 13281 Generated table #8@1: 2154 keys, 376758 bytes
+2023/08/03-19:41:13.720 13281 Compacted 1@1 + 1@2 files => 376758 bytes
+2023/08/03-19:41:13.728 13281 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/08/03-19:41:13.728 13281 Delete type=2 #7
+2023/08/03-19:41:13.728 13281 Delete type=2 #5

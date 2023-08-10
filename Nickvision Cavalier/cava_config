@@ -1,0 +1,13 @@
+[general]
+            framerate = 60
+            bars = 12
+            autosens = 1
+            sensitivity = 100
+            [output]
+            method = raw
+            raw_target = /dev/stdout
+            bit_format = 16bit
+            channels = stereo
+            [smoothing]
+            monstercat = 1
+            noise_reduction = 0.77

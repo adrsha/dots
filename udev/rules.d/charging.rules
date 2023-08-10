@@ -1,4 +1,0 @@
-# Rule for when switching to battery
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/chilly/.Xauthority" RUN+="/usr/bin/su chilly -c '/home/chilly/Scripts/charge-notify.sh 0'"
-# Rule for when switching to AC
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/chilly/.Xauthority" RUN+="/usr/bin/su chilly -c  '/home/chilly/Scripts/charge-notify.sh 1'"

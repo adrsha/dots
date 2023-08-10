@@ -1,0 +1,4 @@
+[2023-08-02 21:25:03.567] [info] Using configuration file /home/chilly/.config/waybar/config
+[2023-08-02 21:25:03.567] [info] Using CSS file /home/chilly/.config/waybar/style.css
+[2023-08-02 21:25:03.657] [warning] Requested height: 27 is less than the minimum height: 28 required by the modules
+[2023-08-02 21:25:03.657] [info] Bar configured (width: 1920, height: 28) for output: eDP-1

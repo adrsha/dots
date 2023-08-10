@@ -1,0 +1,4 @@
+info: main.c:356: 1.1.0
+ err: jpg.c:45: /home/chilly/Pictures/walls/code/solid.png: Not a JPEG file: starts with 0x89 0x50
+info: main.c:200: output: BOE 0x0690 (1920x1080, scale=1)
+info: main.c:108: render: 1920x1080 (scaled from 1920x1080)
