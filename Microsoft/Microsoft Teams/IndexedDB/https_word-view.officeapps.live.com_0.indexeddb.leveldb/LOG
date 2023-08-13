@@ -1,0 +1,5 @@
+2023/08/10-19:35:05.504 7704 Reusing MANIFEST /home/chilly/.config/Microsoft/Microsoft Teams/IndexedDB/https_word-view.officeapps.live.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/11-05:37:30.512 77b5 Level-0 table #5: started
+2023/08/11-05:37:30.519 77b5 Level-0 table #5: 866 bytes OK
+2023/08/11-05:37:30.528 77b5 Delete type=0 #3
+2023/08/11-05:37:30.528 77b5 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

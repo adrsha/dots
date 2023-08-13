@@ -1,15 +1,4 @@
 Error while parsing hooks JSON. Error: ENOENT: no such file or directory, open '/home/chilly/.config/Microsoft/Microsoft Teams/hooks.json'
-(node:78090) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-(node:78090) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 ecsSettingsUpdated listeners added to [EventEmitter]. Use emitter.setMaxListeners() to increase limit
-(node:78090) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 appInitialized listeners added to [EventEmitter]. Use emitter.setMaxListeners() to increase limit
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
-Error occurred in handler for 'setSelectedAudioOutputDevice': No handler registered for 'setSelectedAudioOutputDevice'
+(node:56604) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+[223 05:41:54.151954] Failed to set locale with LANG: en-US
+[223 05:41:54.275927] [glfw error 65544]: process_desktop_settings: failed with error: [org.freedesktop.DBus.Error.UnknownMethod] No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop

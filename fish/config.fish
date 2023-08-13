@@ -1,12 +1,12 @@
 set fish_greeting
-
 fish_vi_key_bindings
 export FZF_DEFAULT_OPTS=" --prompt='➼ ' --pointer=' ' --marker='󰸞 ' --border-label='󰞘  󰞗' --info=inline:'󰶺  ' --scrollbar= --ansi \
 --header='      ' \
---color=bg+:#0B0B11,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg+:#D9E0EE,header:#f38ba8,info:#cba6f7,pointer:1,label:13 \
---color=marker:2,border:0,fg+:#cdd6f4,fg:0,prompt:#cba6f7,hl+:#f38ba8,gutter:-1 --no-separator --cycle --border=rounded --margin=10%,10% -m \
+--color=bg+:16,bg:-1,spinner:7,hl:1 \
+--color=fg+:15,header:1,info:5,pointer:1,label:13 \
+--color=marker:2,border:0,fg+:15,fg:0,prompt:5,hl+:1,gutter:-1 --no-separator --cycle --border=rounded --margin=10%,10% -m \
 "
+export OPENAI_KEY=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
 export QT_QPA_PLATFORMTHEME='qt5ct'
 export PATH="$PATH:/home/chilly/Themes/scripts:/home/chilly/Scripts:/home/chilly/.cargo/bin:/home/chilly/go/bin"
 export BROWSER="firefox"
@@ -44,7 +44,7 @@ if status is-interactive
   alias clean='sudo pacman --color always -Rns $(pacman -Qtdq)'
   alias uni="sudo pacman -Rcns --color always"
   alias yay="yay --color=always"
-  alias lt="ls --tree --depth"
+  alias lt="ls --tree"
   alias re="sh ~/Templates/terminal/terminal_theme.sh"
   alias gettoken="cat ~/Documents/gittoken | wl-copy"
   alias bat="bat --color always --plain"
@@ -107,4 +107,4 @@ set fish_cursor_insert      line       blink
 set fish_cursor_replace_one underscore blink
 set fish_cursor_visual      block
 
-python ~/Scripts/todo.py t
+# python ~/Scripts/todo.py t
