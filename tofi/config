@@ -1,0 +1,47 @@
+# Font
+font = JetBrainsMono NF ExtraBold
+font-size = 13
+
+# Window Style
+horizontal = true
+anchor = top
+width = 100%
+height = 48
+
+outline-width = 2
+outline-color =  #2E3440
+border-width = 0
+min-input-width = 120
+result-spacing = 30
+padding-top = 8
+padding-bottom = 0
+padding-left = 20
+padding-right = 0
+
+# Text style
+prompt-text = "Can I have a"
+prompt-padding = 30
+
+background-color = #2E3440
+text-color = #8793ab
+
+prompt-background = #3B4252
+prompt-background-padding = 4, 10
+prompt-background-corner-radius = 12
+
+input-color = #E5E9F0
+input-background = #272b35
+input-background-padding = 4, 10
+input-background-corner-radius = 12
+
+alternate-result-background = #4C566A
+alternate-result-background-padding = 4, 10
+alternate-result-background-corner-radius = 12
+
+selection-color = #D8DEE9
+selection-background = #BF616A
+selection-background-padding = 4, 10
+selection-background-corner-radius = 12
+selection-match-color = #fff
+
+clip-to-padding = false

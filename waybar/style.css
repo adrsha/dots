@@ -1,0 +1,198 @@
+/* ############################################################################################################ */
+/* ##   ______  __      __  _______   ________  _______    ______   __    __   ______   __    __  ________   ## */
+/* ##  /      \|  \    /  \|       \ |        \|       \  /      \ |  \  |  \ /      \ |  \  /  \|        \  ## */
+/* ## |  $$$$$$\\$$\  /  $$| $$$$$$$\| $$$$$$$$| $$$$$$$\|  $$$$$$\| $$\ | $$|  $$$$$$\| $$ /  $$| $$$$$$$$  ## */
+/* ## | $$   \$$ \$$\/  $$ | $$__/ $$| $$__    | $$__| $$| $$___\$$| $$$\| $$| $$__| $$| $$/  $$ | $$__      ## */
+/* ## | $$        \$$  $$  | $$    $$| $$  \   | $$    $$ \$$    \ | $$$$\ $$| $$    $$| $$  $$  | $$  \     ## */
+/* ## | $$   __    \$$$$   | $$$$$$$\| $$$$$   | $$$$$$$\ _\$$$$$$\| $$\$$ $$| $$$$$$$$| $$$$$\  | $$$$$     ## */
+/* ## | $$__/  \   | $$    | $$__/ $$| $$_____ | $$  | $$|  \__| $$| $$ \$$$$| $$  | $$| $$ \$$\ | $$_____   ## */
+/* ##  \$$    $$   | $$    | $$    $$| $$     \| $$  | $$ \$$    $$| $$  \$$$| $$  | $$| $$  \$$\| $$     \  ## */
+/* ##   \$$$$$$     \$$     \$$$$$$$  \$$$$$$$$ \$$   \$$  \$$$$$$  \$$   \$$ \$$   \$$ \$$   \$$ \$$$$$$$$  ## */
+/* ##                                                                                                        ## */
+/* ## Created by Cybersnake                                                                                  ## */
+/* ############################################################################################################ */
+
+* {
+    border: none;
+    border-radius: 15px;
+    /*font-family: "JetBrainsMono NF ExtraBold";*/
+    font-family: "SpaceMono Nerd Font";
+    font-weight: bold;
+    font-size: 17px;
+    min-height: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+    color: #8793ab;
+}
+
+#workspaces{
+    opacity: 1.0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #2E3440;
+    background: #4C566A;
+}
+tooltip {
+    background: #3B4252;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#workspaces button {
+    color: #2E3440;
+    background: #4C566A;
+    padding-right: 0px;
+    padding-left: 0px;
+    transition: 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #8793ab;
+    padding-right: 19px;
+    padding-left: 19px;
+    background-color: #272b35;
+}
+
+#workspaces button.focused {
+    color: #8793ab;
+    background: #BF616A;
+}
+
+#workspaces button.urgent {
+    color: #BF616A;
+    background: #3B4252;
+}
+
+#workspaces button:hover {
+    color: #8793ab;
+    background: #272b35;
+    padding-right: 23px;
+    padding-left: 23px;
+}
+
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#pulseaudio.microphone,
+#network,
+#bluetooth,
+#custom-notifications,
+#custom-updates,
+#custom-player,
+#tray,
+#memory,
+#disk,
+#backlight{
+    background: #2E3440;
+    opacity: 1.0;
+    padding: 5px 15px 5px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#window:hover,
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-notifications:hover,
+#custom-updates:hover,
+#custom-player:hover,
+#tray:hover,
+#memory:hover,
+#disk:hover,
+#backlight:hover{
+    color: #272b35;
+    background: #8793ab;
+}
+
+#tray {
+    margin-right: 7px;
+}
+
+#window {
+    margin-right: 60px;
+}
+
+#clock {
+    color: #8793ab;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+#network {
+    color: #8793ab;
+    margin-right: 5px;
+}
+
+#custom-notifications {
+    color: #8793ab;
+    padding-left: 9px;
+    padding-right: 15px;
+    margin-left:  2px;
+    margin-right: 2px;
+
+}
+
+#custom-updates {
+    color: #8793ab;
+    border-left:  0px;
+    border-right: 0px;
+    margin-left:  2px;
+    margin-right: 2px;
+}
+
+#custom-player {
+ color: #8793ab;
+ padding-left: 4px;
+ margin-left:  5px;
+ margin-right: 5px;
+}
+
+#memory {
+    color: #8793ab;
+    margin-left: 5px;
+}
+
+#disk {
+    color: #8793ab;
+    margin-left: 5px;
+}
+
+
+#bluetooth {
+  color: #8793ab;
+  margin-left: 5px;
+  margin-right: 5px;
+} 
+
+#pulseaudio {
+  color: #8793ab;
+}
+
+#pulseaudio.microphone {
+    color: #8793ab;
+}
+
+#battery {
+    color: #8793ab;
+}
+
+#battery.critical:not(.charging) {
+  background-color:           #BF616A;
+  color:                      #8793ab;
+  animation-name:             blink;
+  animation-duration:         0.5s;
+  animation-timing-function:  linear;
+  animation-iteration-count:  infinite;
+  animation-direction:        alternate;
+}

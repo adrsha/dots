@@ -1,0 +1,188 @@
+//############################################################################################################
+//##   ______  __      __  _______   ________  _______    ______   __    __   ______   __    __  ________   ##
+//##  /      \|  \    /  \|       \ |        \|       \  /      \ |  \  |  \ /      \ |  \  /  \|        \  ##
+//## |  $$$$$$\\$$\  /  $$| $$$$$$$\| $$$$$$$$| $$$$$$$\|  $$$$$$\| $$\ | $$|  $$$$$$\| $$ /  $$| $$$$$$$$  ##
+//## | $$   \$$ \$$\/  $$ | $$__/ $$| $$__    | $$__| $$| $$___\$$| $$$\| $$| $$__| $$| $$/  $$ | $$__      ##
+//## | $$        \$$  $$  | $$    $$| $$  \   | $$    $$ \$$    \ | $$$$\ $$| $$    $$| $$  $$  | $$  \     ##
+//## | $$   __    \$$$$   | $$$$$$$\| $$$$$   | $$$$$$$\ _\$$$$$$\| $$\$$ $$| $$$$$$$$| $$$$$\  | $$$$$     ##
+//## | $$__/  \   | $$    | $$__/ $$| $$_____ | $$  | $$|  \__| $$| $$ \$$$$| $$  | $$| $$ \$$\ | $$_____   ##
+//##  \$$    $$   | $$    | $$    $$| $$     \| $$  | $$ \$$    $$| $$  \$$$| $$  | $$| $$  \$$\| $$     \  ##
+//##   \$$$$$$     \$$     \$$$$$$$  \$$$$$$$$ \$$   \$$  \$$$$$$  \$$   \$$ \$$   \$$ \$$   \$$ \$$$$$$$$  ##
+//##                                                                                                        ##
+//## Waybar Config                                                                                          ##
+//## Created by Cybersnake                                                                                  ##
+//############################################################################################################
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "modules-left": [
+    "network",
+    "battery",
+    "custom/updates",
+    "custom/notifications",
+    "custom/player",
+    "bluetooth",
+  ],
+  "fixed-center": true,
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
+  "modules-right": [
+    "tray",
+    "clock",
+    "pulseaudio#microphone",
+    "pulseaudio",
+  ],
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "hyprland/workspaces": {
+    "sort-by-name": true,
+    "format": " {icon} ",
+    "show-special": false,
+    "format-icons": {
+     //"1": " 󰲠 ",
+     //"2": " 󰲢 ",
+     //"3": " 󰲤 ",
+     //"4": " 󰲦 ",
+     //"5": " 󰲨 ",
+     //"6": " 󰲪 ",
+     //"7": " 󰲬 ",
+     //"8": " 󰲮 ",
+      "default": "󰊠",
+      "active": "󰮯",
+      "empty": "",
+
+    },
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "all-outputs": false,
+    "persistent_workspaces": {
+      "*": 5
+    }
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 2
+  },
+  "clock": {
+    "interval": 60,
+    //"format": "<span color='#B48EAD'> </span> {:%A, %B %d, %I:%M %p}",
+    "format": "<span color='#4C566A'> </span> {:%I:%M %p}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "format": {
+        "months": "<b>{}</b>",
+        "days": "<b>{}</b>",
+        "weekdays": "<b>{}</b>",
+        "today": "<b>{}</b>"
+      },
+    },
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "<span color='#4C566A'>󰃜 </span>",
+      "<span color='#4C566A'>󰃛 </span>",
+      "<span color='#4C566A'>󰃚 </span>"
+    ],
+  },
+  "battery": {
+    "states": {
+      "good": 100,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "<span color='#4C566A'> </span> {capacity}%",
+    "format-plugged": "<span color='#4C566A'> </span> {capacity}%",
+    "format-icons": [
+      "<span color='#4C566A'> </span>",
+      "<span color='#4C566A'> </span>",
+      "<span color='#4C566A'> </span>",
+      "<span color='#4C566A'> </span>",
+      "<span color='#4C566A'> </span>"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "tooltip": false,
+    "format-muted": "<span color='#4C566A'> </span>Muted",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 10%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 10%-",
+    "format-icons": {
+      "headphone": "<span color='#8FBCBB'> </span> ",
+      "hands-free": "<span color='#8FBCBB'> </span> ",
+      "headset": "<span color='#8FBCBB'> </span> ",
+      "phone": "<span color='#8FBCBB'> </span>",
+      "portable": "<span color='#8FBCBB'> </span>",
+      "car": "<span color='#8FBCBB'> </span>",
+      "default": [
+        "<span color='#4C566A'> </span>",
+        "<span color='#4C566A'>  </span>",
+        "<span color='#4C566A'>  </span>",
+      ]
+    }
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span color='#4C566A'> </span> {volume}%",
+    "format-source-muted": "<span color='#4C566A'>󰍭 </span> Muted",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-",
+  },
+  "network": {
+    "format-disconnected": "Disconnected",
+    "format-wifi": "<span color='#4C566A'>󰤨 </span> {essid}",
+    "tooltip-format": "<span color='#81A1C1'> </span> {signalStrength}",
+    "on-click": "wifimenu",
+  },
+  "bluetooth": {
+    "format": "<span color='#4C566A'> </span> {status}",
+    "format-disabled": "<span color='#4C566A'> </span> {status}",
+    "format-connected": "<span color='#4C566A'> </span> {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "format-connected-battery": "<span color='#4C566A'>󰦢 </span> {device_alias} {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "btblock",
+  },
+  "memory": {
+    "interval": 300,
+    "format": " <span color='#4C566A'> </span> {used}G ",
+    "tooltip-format": "{used} / {total} G",
+  },
+  "disk": {
+    "interval": 600,
+    "format": " <span color='#4C566A'> </span> {percentage_used}%",
+    "tooltip-format": "{used} used out of {total} on {path} ",
+  },
+  "custom/updates": {
+    "format": "{}",
+    "interval": 7200,
+    "exec": "$HOME/.config/waybar/bin/updatecheck",
+    "return-type": "json",
+    "exec-if": "exit 0",
+    "signal": 8
+  },
+  "custom/notifications": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/bin/not-dnd -j",
+    "on-click": "$HOME/.config/waybar/bin/not-dnd",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 2
+  },
+  "custom/player": {
+    "format": "<span color='#4C566A'>󰎆 </span> {}",
+    "interval": 5,
+    "exec": "$HOME/.config/waybar/bin/playerinfo",
+    "max-length": 40,
+    "tooltip": true,
+  },
+}
