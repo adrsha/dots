@@ -1,0 +1,55 @@
+# blue fog theme
+WALLPAPER=/home/chilly/Pictures/walls/api/1voj5hh.png
+
+VARIANT=dark
+BASE00=#10161f
+BASE01=#161d29
+BASE02=#1c2534
+BASE03=#3a4a63
+BASE04=#4f6485
+BASE05=#9db1cc
+BASE06=#b3c4da
+BASE07=#dbe4f0
+BASE08=#c15c5c
+BASE09=#bb8358
+BASE0A=#cbb98a
+BASE0B=#4f7a82
+BASE0C=#6fa0c4
+BASE0D=#5d84c9
+BASE0E=#7b76a8
+BASE0F=#8a6a56
+
+WHITE        =#b3c4da
+DARKER_BLACK =#0a0e15
+BLACK        =#10161f
+BLACK2       =#131a24
+ONE_BG       =#161d29
+ONE_BG2      =#192030
+ONE_BG3      =#1c2534
+GREY         =#3a4a63
+GREY_FG      =#45597a
+GREY_FG2     =#4f6485
+LIGHT_GREY   =#7e93b5
+RED          =#c15c5c
+BABY_PINK    =#7b76a8
+PINK         =#8a6a56
+LINE         =#192030
+GREEN        =#4f7a82
+VIBRANT_GREEN=#659aa0
+BLUE         =#5d84c9
+NORD_BLUE    =#6fa0c4
+YELLOW       =#cbb98a
+SUN          =#bb8358
+PURPLE       =#7b76a8
+DARK_PURPLE  =#4a4568
+TEAL         =#6fb0c9
+ORANGE       =#8a6a56
+CYAN         =#9db1cc
+STATUSLINE_BG=#0d121a
+LIGHTBG      =#161d29
+PMENU_BG     =#5d84c9
+FOLDER_BG    =#6fa0c4
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#3a4a63

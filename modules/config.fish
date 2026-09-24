@@ -1,8 +1,14 @@
+if test -f ~/.config/dots/env.fish
+    source ~/.config/dots/env.fish
+else
+    set -gx DOTS_DIR ~/dots
+end
+
 set -U fish_greeting
 fish_vi_key_bindings
 
-export BIG_THINKER_URL="https://api.shtuneling.tech"
-export BIG_THINKER_API_KEY="cpa_zO3cW3GHwwAPoTf6hOuUF1G02ZvEj2Kx"
+
+export MANPAGER="bat --color always --tabs 4 --theme ansi -l md --wrap auto"
 export DISPLAY=:0
 export RUST_BACKTRACE=full
 export MOZ_ENABLE_WAYLAND=1
@@ -32,16 +38,13 @@ export __GL_GSYNC_ALLOWED=1
 export _GL_VRR_ALLOWED=1
 export WLR_RENDERER_ALLOW_SOFTWARE=1
 export TERM=xterm
-export TERMINAL=wezterm
+export TERMINAL=kitty
 
 fish_add_path path $HOME/Scripts/
 fish_add_path path $HOME/.local/bin
 # fish_add_path path $HOME/.config/emacs/bin
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-    #  * Create missing directories in path when calling `mkdir`
-
     if lsd --version > /dev/null
         alias l="lsd -L";
         alias ls="lsd -L";
@@ -55,7 +58,6 @@ if status is-interactive
     end
 
 
-    alias theme='source ~/dots/themes/set_theme.fish'
     alias cp='cp -ir'
     alias mv='cp -i'
     alias mkdir='mkdir -p'
@@ -63,11 +65,9 @@ if status is-interactive
     alias mv='mv'
     alias fs='df -h -x squashfs -x tmpfs -x devtmpfs'
 
-    # Other Simple aliases
     alias n='nvim'
     alias fc='nvim ~/.config/fish/config.fish'
-    alias hc='nvim ~/.config/hypr/hyprland.conf'
-    alias nc='cd ~/flakes/ && nvim ~/flakes/configuration.nix'
+    alias hc='nvim ~/.config/hypr/hyprland.lua'
     alias ac='nvim ~/.config/alacritty/alacritty.toml'
     alias f='n $(find | fzf)';
     alias o="~/Scripts/launch";
@@ -83,22 +83,17 @@ if status is-interactive
     alias ls='lsd'
     alias nmr='sudo systemctl restart NetworkManager --now'
     alias nm='nmtui'
-    alias ns='nix-shell --command fish'
-    alias nr='sudo nixos-rebuild switch --flake ~/flakes'
     alias fs='sudo du -h -d 2 | sort -rh'
     alias la='lsd -A'
     alias lf='lsd --tree --depth=1'
     alias lt='lsd --tree --depth=2'
     alias glpush='cat ~/Documents/gitlabtoken | wl-copy; git push origin $(git branch --show-current)'
-    alias ghpush='cat ~/Documents/githubtoken| wl-copy; git push origin $(git branch --show-current)'
-    alias pubip='curl https://ipinfo.io/ip | wl-copy'
-
-    function ni
-        nix-search $argv | fzf | awk '{print $1}' | while read -l package;
-        nix-env -iA "nixos.$package" || nix-env -iA "nixpkgs.$package" || echo "Package $package not found in nixpkgs or nixos.";
-    end
+    alias ghpush='cat ~/Documents/githubtoken | wl-copy; git push origin $(git branch --show-current)'
+    alias pubip='curl -4 ifconfig.me | wl-copy'
+    alias pacclean='sudo paccache -ruk0'
 
 end
+
 function clrdir -d "Clear directory contents with optional preview and exclusions"
     set -l show_preview false
     set -l exclude_patterns
@@ -188,11 +183,10 @@ function gt
     commandline -f repaint
 
 end
-end
 
 function theme
-    ~/Scripts/theme-set $argv[1]
-    source ~/.config/fish/conf.d/theme_vars.fish
+    command theme-set $argv[1]
+    and source ~/.config/fish/conf.d/theme_vars.fish
 end
 
 if test -f ~/.config/fish/conf.d/theme_vars.fish

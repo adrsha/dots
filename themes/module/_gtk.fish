@@ -7,8 +7,10 @@
 #
 # On Hyprland you need xdg-desktop-portal-gtk running alongside
 # xdg-desktop-portal-hyprland so that the Settings interface is handled.
-# Add to your hyprland.conf:
-#   exec-once = /usr/lib/xdg-desktop-portal-gtk
+# Add to your hyprland.lua:
+#   hl.on("hyprland.start", function()
+#       hl.exec_cmd("/usr/lib/xdg-desktop-portal-gtk")
+#   end)
 #
 # The old dbus-send call in this script used --type=method_call on
 # Settings.Read — that just queries a value and does nothing useful.
@@ -18,7 +20,7 @@ mkdir -p ~/.config/gtk-3.0 ~/.config/gtk-4.0 ~/.config/qt6ct
 
 set -l is_dark   (test "$THEME_VARIANT" = dark; and echo 1; or echo 0)
 set -l scheme    (test "$THEME_VARIANT" = dark; and echo prefer-dark; or echo prefer-light)
-set -l gtk_theme (test "$THEME_VARIANT" = dark; and echo Adwaita-dark; or echo Adwaita)
+set -l gtk_theme QuickshellSync
 
 # GTK 3 & 4 — write both files from the same printf in one shot.
 printf '[Settings]\ngtk-application-prefer-dark-theme=%s\n' $is_dark \

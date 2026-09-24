@@ -37,7 +37,7 @@ PINK          =#8a5a68
 LINE          =#101417
 GREEN         =#3d8a78
 VIBRANT_GREEN =#4abf9e
-BLUE          =#5d9e96
+BLUE=#5d9e96
 NORD_BLUE     =#4a7a8a
 YELLOW        =#7da198
 SUN           =#8a7060
@@ -50,3 +50,7 @@ STATUSLINE_BG =#030405
 LIGHTBG       =#0c0f12
 PMENU_BG      =#1d2e32
 FOLDER_BG     =#4a7a8a
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#1d2629

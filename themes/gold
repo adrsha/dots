@@ -1,6 +1,6 @@
 # ember_sepia theme
 VARIANT=dark
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/api/3q279v.jpg
 # base_16
 BASE00=#080705
 BASE01=#12100b
@@ -49,3 +49,7 @@ STATUSLINE_BG =#0a0906
 LIGHTBG       =#12100b
 PMENU_BG      =#2a2010
 FOLDER_BG     =#8a6a38
+
+CORNER_RADIUS=25
+BORDER_SIZE=0
+BORDER_COLOR=#3d3423

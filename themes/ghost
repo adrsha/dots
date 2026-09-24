@@ -1,6 +1,6 @@
 # monochrome theme
 VARIANT=dark
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/videos/m2-res_1080p.mp4
 # base_16
 BASE00=#050505
 BASE01=#0f0f12
@@ -49,3 +49,7 @@ STATUSLINE_BG =#08080a
 LIGHTBG       =#0f0f12
 PMENU_BG      =#2a2a30
 FOLDER_BG     =#4f4f5c
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#363640

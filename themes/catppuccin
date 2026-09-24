@@ -1,6 +1,6 @@
 # catppuccin mocha theme
 VARIANT=dark
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/api/e82xxr.jpg
 
 # base_16
 BASE00=#181825
@@ -51,3 +51,7 @@ STATUSLINE_BG =#181825
 LIGHTBG       =#313244
 PMENU_BG      =#89b4fa
 FOLDER_BG     =#89b4fa
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#45475a

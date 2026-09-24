@@ -1,6 +1,6 @@
 # nier_automata_dark theme
 VARIANT=dark
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/videos/cozy-campfire-by-abi-toads.1920x1080.mp4
 
 BASE00=#1e1c10
 BASE01=#2a2719
@@ -14,7 +14,7 @@ BASE08=#c46060
 BASE09=#cc8a5a
 BASE0A=#a87840
 BASE0B=#607a50
-BASE0C=#4a6870
+BASE0C=#5a6860
 BASE0D=#7a7660
 BASE0E=#907888
 BASE0F=#b87870
@@ -37,15 +37,19 @@ LINE          =#323018
 GREEN         =#607a50
 VIBRANT_GREEN =#7a9a68
 BLUE          =#888460
-NORD_BLUE     =#4a6870
+NORD_BLUE     =#5a6860
 YELLOW        =#a87840
 SUN           =#cc8a5a
 PURPLE        =#907888
 DARK_PURPLE   =#5a4a54
-TEAL          =#5a8088
+TEAL          =#5a8068
 ORANGE        =#cc8a5a
 CYAN          =#6a7060
 STATUSLINE_BG =#282618
 LIGHTBG       =#232012
 PMENU_BG      =#c8c49a
-FOLDER_BG     =#4a6870
+FOLDER_BG     =#5a6860
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#4a4730

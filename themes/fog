@@ -1,5 +1,5 @@
 # fog theme
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/api/lyj56q.jpg
 
 VARIANT=dark
 BASE00=#171c1b
@@ -49,3 +49,7 @@ STATUSLINE_BG=#131716
 LIGHTBG      =#1e2423
 PMENU_BG     =#8fa3a0
 FOLDER_BG    =#6b807c
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#404d4a

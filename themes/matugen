@@ -1,0 +1,10 @@
+TRANSPARENT=true
+# matugen theme
+VARIANT=dark
+# Resolve the wallpaper active immediately before switching to this theme.
+WALLPAPER=/home/chilly/Pictures/walls/api/8gj7d2.jpg
+MODE=dynamic
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#444444

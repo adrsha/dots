@@ -1,6 +1,6 @@
 # aquarium theme
 VARIANT=dark
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/videos/abi-toads-cozy-winter.1920x1080.mp4
 
 # base_16
 BASE00=#20202A
@@ -51,3 +51,6 @@ STATUSLINE_BG =#242430
 LIGHTBG       =#2a2a36
 PMENU_BG      =#cddbf9
 FOLDER_BG     =#cddbf9
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#44495e

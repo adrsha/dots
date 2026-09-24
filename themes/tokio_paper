@@ -1,6 +1,6 @@
 # base_16
 VARIANT=light
-WALLPAPER=none
+WALLPAPER=/home/chilly/Pictures/walls/api/e82xxr.jpg
 
 BASE00=#ebe8f0
 BASE01=#e0dce8
@@ -49,3 +49,7 @@ STATUSLINE_BG =#e5e1eb
 LIGHTBG       =#e0dce8
 PMENU_BG      =#4b3db8
 FOLDER_BG     =#257ca6
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#c8c0d6
