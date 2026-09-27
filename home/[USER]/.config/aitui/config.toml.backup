@@ -1,0 +1,112 @@
+[api]
+default_model = "gpt-5.6-sol"
+mock = false
+system_prompt = "You are a developer who hates writing comments, but loves to create highly modular systems, with scalable and performant code. You have this innate desire to always do everything in the best way possible, so you search up all the best ways for anything you do, and only apply the verified best procedures, conventions and decisions."
+reasoning_effort = ""
+reasoning_mode = ""
+native_tools = true
+access_judge_model = ""
+response_suggestion_model = ""
+access_review_mode = "off"
+
+[agent]
+subagent_soft_rounds = 12
+subagent_hard_rounds = 16
+child_model = ""
+
+[model_usage]
+default_coding_profile = "normal_coding"
+default_child_profile = "cheap_child"
+
+[model_usage.tiny_coding]
+model = "Luna"
+reasoning_effort = "low"
+reasoning_mode = "medium"
+
+[model_usage.normal_coding]
+model = "Sol"
+reasoning_effort = "medium"
+reasoning_mode = "medium"
+
+[model_usage.difficult_coding]
+model = "Sol"
+reasoning_effort = "high"
+reasoning_mode = "high"
+
+[model_usage.very_difficult_coding]
+model = "Sol"
+reasoning_effort = "xhigh"
+reasoning_mode = "max"
+
+[model_usage.extremely_long_coding]
+model = "GPT-6 Pro"
+reasoning_effort = "high"
+reasoning_mode = "extra_high"
+
+[model_usage.cheap_child]
+model = "Luna"
+reasoning_effort = "low"
+reasoning_mode = "medium"
+
+[model_usage.serious_child]
+model = "Terra"
+reasoning_effort = "medium"
+reasoning_mode = "medium"
+
+[model_usage.judge_evaluator]
+model = "Sol"
+reasoning_effort = "high"
+reasoning_mode = "high"
+
+[media]
+decoded_pixels = 100000000
+encoded_media_bytes = 16777216
+image_count = 8
+
+[agents]
+
+[ui]
+input_height = 6
+sidebar = "auto"
+theme = "terminal"
+auto_approve_reads = true
+sticky_skills = true
+response_suggestions = false
+context_window = 128000
+auto_copy_selection = true
+
+[search]
+provider = "searxng"
+searxng_url = ""
+
+[keybinds]
+quit = "ctrl-c"
+next_session = "ctrl-n"
+prev_session = "ctrl-p"
+prev_subtask = "alt-["
+next_subtask = "alt-]"
+session_picker = "ctrl-s"
+fork_session = "ctrl-y"
+open_editor = "ctrl-o"
+open_file = "ctrl-e"
+open_shell = "ctrl-g"
+file_picker = "ctrl-f"
+model_picker = "ctrl-m"
+next_model = "ctrl-]"
+prev_model = "ctrl-["
+redraw = "ctrl-l"
+scroll_up = "pageup"
+scroll_down = "pagedown"
+scroll_top = "ctrl-home"
+scroll_bottom = "ctrl-shift-d"
+scroll_half_down = "ctrl-d"
+scroll_half_up = "ctrl-u"
+toggle_output = "ctrl-t"
+paste_clipboard = "ctrl-v"
+insert = "i"
+command = ":"
+palette = "/"
+help = "?"
+submit = "enter"
+visual = "v"
+normal = "jk"

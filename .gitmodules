@@ -10,3 +10,6 @@
 [submodule "Google-Sans-Font"]
 	path = Google-Sans-Font
 	url = https://github.com/hprobotic/Google-Sans-Font/
+[submodule "home/[USER]/theme_manager"]
+	path = home/[USER]/theme_manager
+	url = git@github.com:adrsha/theme_manager

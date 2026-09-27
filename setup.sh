@@ -1,183 +1,157 @@
 #!/usr/bin/env bash
+#
+# setup.sh: restore symlinks for everything tracked into DOTS_DIR.
+# Primary source of truth is DOTS_DIR/.track-manifest (rel_path<TAB>target
+# per line, written by track). If the manifest is missing or incomplete,
+# falls back to walking the dots/home/[USER]/... and dots/<rest>/...
+# tree directly and resolving [USER] to the current real home, so the
+# repo is restorable even without the manifest.
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 DOTS_DIR="${DOTS_DIR:-$SCRIPT_DIR}"
-CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-BIN_HOME="${HOME}/.local/bin"
-MODE="interactive"
+MANIFEST="$DOTS_DIR/.track-manifest"
 FORCE=0
 INSTALL_THEME_MANAGER=0
-COMPONENTS=()
+
+# same real-user resolution as track, so sudo runs restore to the
+# invoking user's home rather than root's
+if [[ -n "${SUDO_USER:-}" ]]; then
+    real_user="$SUDO_USER"
+else
+    real_user="${USER:-$(id -un)}"
+fi
+real_home="$(getent passwd "$real_user" | cut -d: -f6)"
+if [[ -z "$real_home" || ! -d "$real_home" ]]; then
+    echo "setup.sh: could not resolve home directory for user '$real_user'" >&2
+    exit 1
+fi
+real_home="$(realpath -e -- "$real_home")"
 
 usage() {
     cat <<'EOF'
-Usage: ./setup.sh [options] [components...]
+Usage: ./setup.sh [options]
 
 Options:
-  --all             Install every dotfile component without prompts.
-  --force           Replace existing non-matching targets instead of skipping.
+  --force           Replace existing unmanaged targets instead of skipping.
   --theme-manager   Build and install theme-set/theme-daemon to ~/.local/bin.
-  --no-prompts      Only install components explicitly listed on the command line.
   -h, --help        Show this help.
 
-Components:
-  hypr ghostty nvim fish vicinae vicinae-themes lsd swaync zathura scripts firefox-colors
-
-Examples:
-  ./setup.sh --all --theme-manager
-  ./setup.sh --all --force --theme-manager
-  ./setup.sh fish nvim ghostty
+Package installation is handled separately via aconf, not this script.
 EOF
 }
 
-log() { printf '==> %s\n' "$*"; }
+log()  { printf '==> %s\n' "$*"; }
 warn() { printf 'WARN: %s\n' "$*" >&2; }
 
-ask() {
-    local prompt="$1"
-    read -r -p "$prompt [y/N]: " ans
-    [[ "$ans" =~ ^[Yy]$ ]]
-}
-
-contains_component() {
-    local wanted="$1"
-    local item
-    for item in "${COMPONENTS[@]}"; do
-        [[ "$item" == "$wanted" ]] && return 0
-    done
-    return 1
-}
-
-should_install() {
-    local component="$1"
-    case "$MODE" in
-        all) return 0 ;;
-        explicit) contains_component "$component" ;;
-        interactive) ask "Setup ${component}?" ;;
+for arg in "$@"; do
+    case "$arg" in
+        --force|-f)       FORCE=1 ;;
+        --theme-manager)  INSTALL_THEME_MANAGER=1 ;;
+        -h|--help)        usage; exit 0 ;;
+        *)                warn "unrecognized argument: $arg"; usage; exit 1 ;;
     esac
+done
+
+# resolve a rel_path (which may contain the literal "home/[USER]"
+# segment) to the real absolute target path on this machine
+resolve_target() {
+    local rel_path="$1"
+    if [[ "$rel_path" == "home/[USER]/"* ]]; then
+        printf '%s/%s\n' "$real_home" "${rel_path#home/\[USER\]/}"
+    else
+        printf '/%s\n' "$rel_path"
+    fi
 }
 
-replace_path() {
-    local target="$1"
-    if [[ "$FORCE" -eq 1 ]]; then
-        rm -rf -- "$target"
+restore_link() {
+    local rel_path="$1"
+    local target="$2"
+    local dest="$DOTS_DIR/$rel_path"
+
+    if [[ ! -e "$dest" && ! -L "$dest" ]]; then
+        warn "'$rel_path' has no matching file in DOTS_DIR; skipping."
         return 0
     fi
-    warn "$target already exists and is not managed by this repo; skipping (use --force to replace)."
-    return 1
-}
-
-link_target() {
-    local target="$1"
-    local source="$2"
-    local name="$3"
-
-    mkdir -p -- "$(dirname -- "$target")"
 
     if [[ -L "$target" ]]; then
         local current
         current="$(readlink -- "$target")"
-        if [[ "$current" == "$source" ]]; then
-            log "$name already linked."
+        if [[ "$current" == "$dest" ]]; then
+            log "already linked: $target"
             return 0
         fi
-        replace_path "$target" || return 0
+        if [[ "$FORCE" -ne 1 ]]; then
+            warn "$target is a symlink to somewhere else; skipping (use --force to replace)."
+            return 0
+        fi
+        rm -f -- "$target"
     elif [[ -e "$target" ]]; then
-        replace_path "$target" || return 0
+        if [[ "$FORCE" -ne 1 ]]; then
+            warn "$target already exists and is unmanaged; skipping (use --force to replace)."
+            return 0
+        fi
+        rm -rf -- "$target"
     fi
 
-    ln -sfn -- "$source" "$target"
-    log "Linked $name -> $target"
-}
+    local target_parent
+    target_parent="$(dirname -- "$target")"
 
-clone_or_update() {
-    local url="$1"
-    local target="$2"
-    local name="$3"
-
-    if [[ -d "$target/.git" ]]; then
-        log "Updating $name..."
-        git -C "$target" pull --ff-only
-    elif [[ -e "$target" || -L "$target" ]]; then
-        replace_path "$target" || return 0
-        git clone "$url" "$target"
-    else
-        git clone "$url" "$target"
+    if [[ ! -w "$target_parent" ]] && [[ ! -d "$target_parent" ]]; then
+        warn "no write permission on '$target_parent'; re-run with sudo for this entry ($rel_path)."
+        return 0
     fi
+
+    mkdir -p -- "$target_parent"
+    ln -s -- "$dest" "$target"
+    log "linked $target -> $dest"
 }
 
-register_repo_path() {
-    mkdir -p -- "$CONFIG_HOME/dots" "$STATE_HOME/theme" "$BIN_HOME"
-    printf '%s\n' "$DOTS_DIR" > "$CONFIG_HOME/dots/path"
-    cat > "$CONFIG_HOME/dots/env.fish" <<EOF
-# Generated by dots/setup.sh. Do not edit manually.
-set -gx DOTS_DIR '$DOTS_DIR'
-EOF
-    log "Registered DOTS_DIR=$DOTS_DIR"
+restored_rel_paths=()
+
+if [[ -f "$MANIFEST" ]]; then
+    while IFS=$'\t' read -r rel_path target; do
+        [[ -z "$rel_path" ]] && continue
+        restore_link "$rel_path" "$target"
+        restored_rel_paths+=("$rel_path")
+    done < "$MANIFEST"
+else
+    warn "no manifest found at '$MANIFEST'; falling back to tree walk."
+fi
+
+# fallback: walk the tree for anything the manifest didn't cover
+# (missing manifest entirely, or entries added/edited by hand)
+was_restored() {
+    local needle="$1" item
+    for item in "${restored_rel_paths[@]}"; do
+        [[ "$item" == "$needle" ]] && return 0
+    done
+    return 1
 }
+
+while IFS= read -r -d '' entry; do
+    rel_path="${entry#"$DOTS_DIR"/}"
+    [[ "$rel_path" == .track-manifest ]] && continue
+    [[ "$rel_path" == .git || "$rel_path" == .git/* ]] && continue
+    was_restored "$rel_path" && continue
+
+    target="$(resolve_target "$rel_path")"
+    restore_link "$rel_path" "$target"
+done < <(find "$DOTS_DIR" -mindepth 1 -maxdepth 3 -print0 2>/dev/null)
 
 install_theme_manager() {
     if ! command -v cargo >/dev/null 2>&1; then
         warn "cargo is not installed; skipping theme manager build."
         return 0
     fi
-
     log "Building theme manager..."
     cargo build --release --manifest-path "$DOTS_DIR/themes/theme_manager/Cargo.toml"
-    install -Dm755 "$DOTS_DIR/themes/theme_manager/target/release/theme-set" "$BIN_HOME/theme-set"
-    install -Dm755 "$DOTS_DIR/themes/theme_manager/target/release/theme-daemon" "$BIN_HOME/theme-daemon"
-    log "Installed theme-set and theme-daemon to $BIN_HOME"
+    install -Dm755 "$DOTS_DIR/themes/theme_manager/target/release/theme-set" "$real_home/.local/bin/theme-set"
+    install -Dm755 "$DOTS_DIR/themes/theme_manager/target/release/theme-daemon" "$real_home/.local/bin/theme-daemon"
+    log "Installed theme-set and theme-daemon to $real_home/.local/bin"
 }
 
-for arg in "$@"; do
-    case "$arg" in
-        --all|init)
-            MODE="all"
-            ;;
-        --force|-f)
-            FORCE=1
-            ;;
-        --theme-manager)
-            INSTALL_THEME_MANAGER=1
-            ;;
-        --no-prompts)
-            MODE="explicit"
-            ;;
-        -h|--help)
-            usage
-            exit 0
-            ;;
-        *)
-            COMPONENTS+=("$arg")
-            [[ "$MODE" == "interactive" ]] && MODE="explicit"
-            ;;
-    esac
-done
+[[ "$INSTALL_THEME_MANAGER" -eq 1 ]] && install_theme_manager
 
-register_repo_path
-
-should_install hypr && link_target "$CONFIG_HOME/hypr" "$DOTS_DIR/hypr" "Hyprland"
-should_install ghostty && link_target "$CONFIG_HOME/ghostty" "$DOTS_DIR/ghostty" "Ghostty"
-should_install nvim && link_target "$CONFIG_HOME/nvim" "$DOTS_DIR/nvim-perf" "Neovim"
-should_install fish && link_target "$CONFIG_HOME/fish/config.fish" "$DOTS_DIR/modules/config.fish" "fish"
-should_install vicinae && link_target "$CONFIG_HOME/vicinae" "$DOTS_DIR/vicinae" "Vicinae"
-should_install vicinae-themes && link_target "$DATA_HOME/vicinae/themes" "$DOTS_DIR/vicinae-themes" "Vicinae themes"
-should_install lsd && link_target "$CONFIG_HOME/lsd" "$DOTS_DIR/lsd" "lsd"
-should_install swaync && link_target "$CONFIG_HOME/swaync" "$DOTS_DIR/swaync" "swaync"
-should_install zathura && link_target "$CONFIG_HOME/zathura" "$DOTS_DIR/zathura" "zathura"
-should_install firefox-colors && link_target "$CONFIG_HOME/firefox-colors" "$DOTS_DIR/firefox-colors" "Firefox colors"
-should_install scripts && clone_or_update "https://github.com/adrsha/scripts" "$HOME/Scripts" "Scripts"
-
-if [[ "$INSTALL_THEME_MANAGER" -eq 1 ]] || { [[ "$MODE" == "interactive" ]] && ask "Install theme manager binaries?"; }; then
-    install_theme_manager
-fi
-
-if grep -qi "nixos" /etc/os-release 2>/dev/null; then
-    log "NixOS detected. Keep hardware-configuration.nix machine-specific; copy it manually only when rebuilding this host."
-fi
-
-log "Done. Re-run safely any time; use --all for a full bootstrap and --force to replace existing unmanaged targets."
+log "Done. Package installation is handled by aconf, not this script."

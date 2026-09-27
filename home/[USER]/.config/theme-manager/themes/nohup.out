@@ -1,0 +1,36 @@
+theme-daemon: starting
+theme-daemon: applying initial theme 'carbon'
+theme-manager: [fish] wrote /home/chilly/.config/fish/conf.d/theme_vars.fish
+theme-manager: [ghostty] wrote /home/chilly/.config/ghostty/themes/active
+theme-manager: [hyprland] wrote /home/chilly/.config/hypr/colors.lua
+theme-manager: [kitty] wrote /home/chilly/.config/kitty/themes/active.conf
+theme-manager: [vicinae] skipped (not installed)
+theme-manager: [swaync] wrote /home/chilly/.config/swaync/theme-vars.css
+theme-manager: [nvim-patch] wrote /tmp/nvim_theme_patch.lua
+theme-manager: [gtk] wrote /home/chilly/.config/gtk-3.0/theme-manager.ini
+theme-manager: [gtk4] wrote /home/chilly/.config/gtk-4.0/theme-manager.ini
+theme-manager: [qt6ct] wrote /home/chilly/.config/qt6ct/theme-manager.conf
+theme-manager: [zathura] wrote /home/chilly/.config/zathura/themes/active
+theme-manager: [nvim] recompiled base46 cache
+theme-manager: [variant] gsettings color-scheme → prefer-dark
+theme-manager: [variant] gsettings gtk-theme → QuickshellSync
+theme-manager: [wallpaper] set to '/home/chilly/Pictures/walls/warm/tablet.jpg'
+theme-daemon: watching /home/chilly/.local/state/theme
+theme-daemon: starting
+theme-daemon: applying initial theme 'carbon'
+theme-manager: [fish] wrote /home/chilly/.config/fish/conf.d/theme_vars.fish
+theme-manager: [ghostty] wrote /home/chilly/.config/ghostty/themes/active
+theme-manager: [hyprland] wrote /home/chilly/.config/hypr/colors.lua
+theme-manager: [kitty] wrote /home/chilly/.config/kitty/themes/active.conf
+theme-manager: [vicinae] skipped (not installed)
+theme-manager: [swaync] wrote /home/chilly/.config/swaync/theme-vars.css
+theme-manager: [nvim-patch] wrote /tmp/nvim_theme_patch.lua
+theme-manager: [gtk] wrote /home/chilly/.config/gtk-3.0/theme-manager.ini
+theme-manager: [gtk4] wrote /home/chilly/.config/gtk-4.0/theme-manager.ini
+theme-manager: [qt6ct] wrote /home/chilly/.config/qt6ct/theme-manager.conf
+theme-manager: [zathura] wrote /home/chilly/.config/zathura/themes/active
+theme-manager: [nvim] recompiled base46 cache
+theme-manager: [variant] gsettings color-scheme → prefer-dark
+theme-manager: [variant] gsettings gtk-theme → QuickshellSync
+theme-manager: [wallpaper] set to '/home/chilly/Pictures/walls/warm/tablet.jpg'
+theme-daemon: watching /home/chilly/.local/state/theme
