@@ -1,7 +1,6 @@
 # ember_sepia theme
 VARIANT=dark
-WALLPAPER=/home/chilly/Pictures/walls/api/3q279v.jpg
-# base_16
+WALLPAPER=/home/chilly/Pictures/walls/professional/nastia-petruk-eT9M78g2CcQ-unsplash.jpg
 BASE00=#080705
 BASE01=#12100b
 BASE02=#1f1b13
@@ -14,9 +13,9 @@ BASE08=#ff3333
 BASE09=#ff8800
 BASE0A=#ffcc00
 BASE0B=#7a7040
-BASE0C=#8a6a38
-BASE0D=#b89050
-BASE0E=#996644
+BASE0C=#77908a
+BASE0D=#78848a
+BASE0E=#8f7a86
 BASE0F=#e65c00
 # base_30
 WHITE         =#e5be73
@@ -36,15 +35,15 @@ PINK          =#c04428
 LINE          =#19160f
 GREEN         =#7a7040
 VIBRANT_GREEN =#a09050
-BLUE          =#b89050
-NORD_BLUE     =#8a6a38
+BLUE          =#78848a
+NORD_BLUE     =#566268
 YELLOW        =#ffcc00
 SUN           =#ff8800
-PURPLE        =#996644
-DARK_PURPLE   =#66402a
-TEAL          =#8a6a38
+PURPLE        =#8f7a86
+DARK_PURPLE   =#5a4852
+TEAL          =#77908a
 ORANGE        =#e65c00
-CYAN          =#f0d090
+CYAN          =#9bb0a9
 STATUSLINE_BG =#0a0906
 LIGHTBG       =#12100b
 PMENU_BG      =#2a2010

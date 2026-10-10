@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=KaliVm
+Icon=computer
+Exec=qemu-system-x86_64 -enable-kvm -cpu host -m 8G -smp 8 -drive file=/home/chilly/virtmachines/debian13.qcow2,format=qcow2,if=virtio -display gtk -device qxl-vga,vram_size_mb=256,xres=1920,yres=1080 -netdev bridge,id=net0,br=nm-bridge -device virtio-net-pci,netdev=net0 -fsdev local,security_model=mapped-xattr,id=fsdev0,path=/home/chilly/shared -device virtio-9p-pci,fsdev=fsdev0,mount_tag=host_share -usb -device usb-tablet
+Terminal=false
+Categories=System;Emulator;
+Keywords=virtualization;vm;qemu;kvm;

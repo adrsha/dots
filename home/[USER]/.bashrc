@@ -1,3 +1,6 @@
+export BIG_THINKER_URL="https://api.shtuneling.tech"
+export BIG_THINKER_API_KEY="cpa_zO3cW3GHwwAPoTf6hOuUF1G02ZvEj2Kx"
+
 export MANPAGER="bat --color always --tabs 4 --theme ansi -l md --wrap auto"
 export DISPLAY=:0
 export RUST_BACKTRACE=full
@@ -245,11 +248,11 @@ gt() {
 
 theme() {
     command theme-set "$1" &&
-        source "$HOME/.config/fish/conf.d/theme_vars.fish"
+        . "$HOME/.config/theme-manager/theme_env.sh"
 }
 
-if [[ -f "$HOME/.config/fish/conf.d/theme_vars.fish" ]]; then
-    source "$HOME/.config/fish/conf.d/theme_vars.fish"
+if [[ -f "$HOME/.config/theme-manager/theme_env.sh" ]]; then
+    . "$HOME/.config/theme-manager/theme_env.sh"
 fi
 
 # ─────────────────────────────────────────────────────────────

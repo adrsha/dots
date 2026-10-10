@@ -1,0 +1,11 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh nwfilter-edit qemu-announce-self
+or other application using the libvirt API.
+-->
+
+<filter name='qemu-announce-self' chain='root'>
+  <uuid>ddf1999d-3cdb-4aa1-9481-50eef11a1bd9</uuid>
+  <filterref filter='qemu-announce-self-rarp'/>
+</filter>

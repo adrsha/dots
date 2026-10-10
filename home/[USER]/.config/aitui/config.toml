@@ -1,5 +1,5 @@
 [api]
-default_model = "gpt-6-sol"
+default_model = "gpt-6.1-sol"
 mock = false
 system_prompt = ""
 reasoning_effort = ""
@@ -24,12 +24,12 @@ reasoning_effort = "low"
 reasoning_mode = "low"
 
 [model_usage.normal_coding]
-model = "GPT-6 Sol"
+model = "GPT-6.1 Sol"
 reasoning_effort = "medium"
 reasoning_mode = "medium"
 
 [model_usage.difficult_coding]
-model = "GPT-6 Sol"
+model = "GPT-6.1 Sol"
 reasoning_effort = "high"
 reasoning_mode = "high"
 
@@ -49,12 +49,12 @@ reasoning_effort = "low"
 reasoning_mode = "low"
 
 [model_usage.serious_child]
-model = "GPT-6 Sol"
+model = "GPT-6.1 Sol"
 reasoning_effort = "high"
 reasoning_mode = "high"
 
 [model_usage.judge_evaluator]
-model = "GPT-6 Sol"
+model = "GPT-6.1 Sol"
 reasoning_effort = "high"
 reasoning_mode = "high"
 
@@ -66,18 +66,13 @@ image_count = 8
 [agents]
 
 [ui]
+icons = "auto"
 input_height = 6
 sidebar = "auto"
 theme = "terminal"
-auto_approve_reads = true
-sticky_skills = true
 response_suggestions = false
 context_window = 128000
 auto_copy_selection = true
-
-[search]
-provider = "searxng"
-searxng_url = ""
 
 [keybinds]
 quit = "ctrl-c"
@@ -92,6 +87,7 @@ open_file = "ctrl-e"
 open_shell = "ctrl-g"
 file_picker = "ctrl-f"
 model_picker = "ctrl-m"
+skills_browser = "alt-s"
 next_model = "ctrl-]"
 prev_model = "ctrl-["
 redraw = "ctrl-l"

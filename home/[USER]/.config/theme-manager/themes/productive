@@ -1,5 +1,6 @@
 VARIANT=dark
-WALLPAPER=none
+TRANSPARENT=0.8
+WALLPAPER=/home/chilly/Pictures/walls/warm/1078854.png
 
 BASE00=#060607
 BASE01=#101113

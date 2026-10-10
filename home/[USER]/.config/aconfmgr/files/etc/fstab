@@ -1,0 +1,6 @@
+# UUID=1a3e207a-fe27-44a0-a73f-fc379ed506b9
+/dev/nvme0n1p4      	/         	ext4      	rw,relatime	0 1
+
+# UUID=CED4-F73B
+/dev/nvme0n1p1      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+

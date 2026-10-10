@@ -1,7 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR _tide_left_items:pwd\x1egit\x1enewline\x1echaracter
-SETUVAR _tide_prompt_908:\x1b\x5b38\x3b2\x3b28\x3b28\x3b28\x3b49m\ue0b2\x1b\x5b48\x3b2\x3b28\x3b28\x3b28m\x20\x40PWD\x40\x20\x1b\x5b38\x3b2\x3b28\x3b28\x3b28\x3b49m\ue0b0\x1e\x1b\x5b38\x3b2\x3b95\x3b215\x3b0m\u276f\x1e\x1b\x5b38\x3b2\x3b28\x3b28\x3b28\x3b49m\ue0b2\x1b\x5b38\x3b2\x3b95\x3b135\x3b135\x3b48\x3b2\x3b28\x3b28\x3b28m\x2009\x3a24\x3a39\x20AM\x20\x1b\x5b38\x3b2\x3b28\x3b28\x3b28\x3b49m\ue0b0
 SETUVAR _tide_right_items:status\x1ecmd_duration\x1econtext\x1ejobs\x1enode\x1epython\x1erustc\x1ejava\x1ego\x1etime
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_user_paths:/home/chilly/\x2elocal/bin\x1e/home/chilly/Scripts

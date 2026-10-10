@@ -6,10 +6,8 @@ require("colors")
 local terminal = os.getenv("TERMINAL")
 local super = "SUPER"
 
--- Keep GTK applications on the generated Base16 theme. This must be set by
--- Hyprland itself so directly launched applications (including Firefox) do not
--- inherit a stale login-shell GTK_THEME override.
-hl.env("GTK_THEME", "QuickshellSync")
+-- Match theme-manager's generated GTK theme for directly launched apps.
+hl.env("GTK_THEME", "ThemeManager")
 
 local function glass_mode_enabled()
     local settings = io.open(os.getenv("HOME") .. "/.config/quickshell/shell-settings.json", "r")
@@ -38,6 +36,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
     hl.exec_cmd("theme-daemon")
     hl.exec_cmd("qs -d")
+    hl.exec_cmd("/home/chilly/.local/bin/clipboard-sync-host.sh")
     hl.exec_cmd("kdeconnect-indicator &")
 end)
 
@@ -45,7 +44,7 @@ end)
 hl.config({
     general = {
         gaps_in = 2,
-        gaps_out = 8,
+        gaps_out = 20,
         gaps_workspaces = 0,
         resize_on_border = true,
         layout = "dwindle",
@@ -228,8 +227,8 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind(super .. " + LEFT", hl.dsp.exec_cmd("qs ipc call shell changeBrightness -- -5"), repeating)
 hl.bind(super .. " + RIGHT", hl.dsp.exec_cmd("qs ipc call shell changeBrightness 5"), repeating)
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs ipc call shell changeBrightness 5"), repeating)
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("qs ipc call shell changeBrightness -- -5"), repeating)
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("qs ipc call shell changeBrightness -- -5"), repeating)
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("qs ipc call shell changeBrightness 5"), repeating)
 
 -- Window rules
 hl.window_rule({
@@ -248,12 +247,12 @@ hl.window_rule({
 -- configuration so reloading Hyprland updates all existing layer surfaces.
 local quickshellGlassRule = hl.layer_rule({
     name = "quickshell-glass",
-    match = { namespace = "^quickshell$" },
+    match = { namespace = "^quickshell($|-(osd|workspace-osd|wallpaper-studio|notification.*|screenshot.*)$)" },
     blur = true,
     -- Retain blur through near-clear QML pixels in Transparent glass mode.
     ignore_alpha = 0.001,
 })
-quickshellGlassRule:set_enabled(glass_mode_enabled())
+quickshellGlassRule:set_enabled(true) -- Opaque themes naturally cover the blur.
 
 -- Desktop constellation widgets stay visually container-free. Their QML layer
 -- exposes only near-zero-alpha geometry, so this rule blurs the wallpaper in
