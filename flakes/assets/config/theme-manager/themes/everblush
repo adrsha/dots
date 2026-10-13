@@ -1,0 +1,59 @@
+# everblush theme
+VARIANT=dark
+WALLPAPER=none
+# Colors sourced from https://github.com/Everblush/everblush
+# bg=#141b1e  lighter_bg=#232a2d  fg=#dadada
+
+# base_16
+BASE00=#141b1e
+BASE01=#232a2d
+BASE02=#2d3437
+BASE03=#3b4244
+BASE04=#a0a8a8
+BASE05=#dadada
+BASE06=#e2e2e2
+BASE07=#eaeaea
+BASE08=#e57474
+BASE09=#e5a46b
+BASE0A=#e5c76b
+BASE0B=#8ccf7e
+BASE0C=#6cbfbf
+BASE0D=#67b0e8
+BASE0E=#c47fd5
+BASE0F=#d68c67
+
+# base_30
+WHITE         =#dadada
+DARKER_BLACK  =#0e1416
+BLACK         =#141b1e
+BLACK2        =#1a2124
+ONE_BG        =#1e2629
+ONE_BG2       =#222d30
+ONE_BG3       =#263134
+GREY          =#2d3b3e
+GREY_FG       =#3a4a4d
+GREY_FG2      =#435457
+LIGHT_GREY    =#506164
+RED           =#e57474
+BABY_PINK     =#de8f8f
+PINK          =#d68c67
+LINE          =#1e2b2e
+GREEN         =#8ccf7e
+VIBRANT_GREEN =#78bd6a
+BLUE          =#67b0e8
+NORD_BLUE     =#5aa3de
+YELLOW        =#e5c76b
+SUN           =#d4b75a
+PURPLE        =#c47fd5
+DARK_PURPLE   =#a96bbf
+TEAL          =#6cbfbf
+ORANGE        =#e5a46b
+CYAN          =#6cbfbf
+STATUSLINE_BG =#1a2124
+LIGHTBG       =#1e2629
+PMENU_BG      =#67b0e8
+FOLDER_BG     =#67b0e8
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#3b4244

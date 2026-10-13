@@ -1,0 +1,56 @@
+# matrix_green theme
+VARIANT=dark
+WALLPAPER=none
+
+# base_16
+BASE00=#000200
+BASE01=#031205
+BASE02=#07240b
+BASE03=#164d21
+BASE04=#258037
+BASE05=#33ff66
+BASE06=#99ffb4
+BASE07=#e6ffe6
+BASE08=#ff2222
+BASE09=#ff9900
+BASE0A=#c8ff00
+BASE0B=#00ff88
+BASE0C=#00ffcc
+BASE0D=#00e644
+BASE0E=#66cc33
+BASE0F=#ff5500
+# base_30
+WHITE         =#e6ffe6
+DARKER_BLACK  =#000100
+BLACK         =#000200
+BLACK2        =#020a03
+ONE_BG        =#031205
+ONE_BG2       =#051c08
+ONE_BG3       =#07240b
+GREY          =#164d21
+GREY_FG       =#1c662c
+GREY_FG2      =#258037
+LIGHT_GREY    =#39b351
+RED           =#ff2222
+BABY_PINK     =#ff4477
+PINK          =#dd2266
+LINE          =#051c08
+GREEN         =#33ff66
+VIBRANT_GREEN =#00ff44
+BLUE          =#00e644
+NORD_BLUE     =#00ffcc
+YELLOW        =#c8ff00
+SUN           =#ffaa00
+PURPLE        =#66cc33
+DARK_PURPLE   =#336600
+TEAL          =#00ff88
+ORANGE        =#ff9900
+CYAN          =#99ffb4
+STATUSLINE_BG =#010602
+LIGHTBG       =#031205
+PMENU_BG      =#164d21
+FOLDER_BG     =#00e644
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#164d21

@@ -1,0 +1,58 @@
+# nier_automata_light theme
+VARIANT=light
+WALLPAPER=none
+
+# base_16
+BASE00=#cdca9a
+
+BASE01=#aea96d
+BASE02=#9f9a5d
+BASE03=#7f7a45
+BASE04=#524e36
+BASE05=#1a1914
+BASE06=#363428
+BASE07=#141410
+BASE08=#993d3d
+BASE09=#a6613c
+BASE0A=#734f24
+BASE0B=#384230
+BASE0C=#253b3d
+BASE0D=#474435
+BASE0E=#5c4a56
+BASE0F=#8c4a42
+
+# base_30
+WHITE         =#2b291f
+DARKER_BLACK  =#dbd8aa
+BLACK         =#d6d29f
+BLACK2        =#cbc78f
+ONE_BG        =#bdb97f
+ONE_BG2       =#aea96d
+ONE_BG3       =#9f9a5d
+GREY          =#7f7a45
+GREY_FG       =#363428
+GREY_FG2      =#1a1914
+LIGHT_GREY    =#474435
+RED           =#993d3d
+BABY_PINK     =#5c4a56
+PINK          =#8c4a42
+LINE          =#bab57f
+GREEN         =#384230
+VIBRANT_GREEN =#5b6951
+BLUE          =#474435
+NORD_BLUE     =#253b3d
+YELLOW        =#734f24
+SUN           =#a6613c
+PURPLE        =#5c4a56
+DARK_PURPLE   =#3d3139
+TEAL          =#4e6669
+ORANGE        =#a6613c
+CYAN          =#4e5246
+STATUSLINE_BG =#c7c394
+LIGHTBG       =#c2be8a
+PMENU_BG      =#363428
+FOLDER_BG     =#253b3d
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#7f7a45

@@ -1,0 +1,55 @@
+# monochrome theme
+VARIANT=dark
+WALLPAPER=/home/chilly/Pictures/walls/cold/andre-schofield-V3ICmzZT35k-unsplash.jpg
+# base_16
+BASE00=#050505
+BASE01=#0f0f12
+BASE02=#1c1c21
+BASE03=#363640
+BASE04=#4f4f5c
+BASE05=#b8b8c2
+BASE06=#d6d6db
+BASE07=#f0f0f2
+BASE08=#e8e4e4
+BASE09=#d4d0cc
+BASE0A=#c8c4c0
+BASE0B=#b0b0b8
+BASE0C=#c0c0cc
+BASE0D=#c8c8d6
+BASE0E=#909098
+BASE0F=#d0cccc
+# base_30
+WHITE         =#d6d6db
+DARKER_BLACK  =#000000
+BLACK         =#050505
+BLACK2        =#0a0a0d
+ONE_BG        =#0f0f12
+ONE_BG2       =#14141a
+ONE_BG3       =#1c1c21
+GREY          =#363640
+GREY_FG       =#42424f
+GREY_FG2      =#4f4f5c
+LIGHT_GREY    =#707080
+RED           =#e8e4e4
+BABY_PINK     =#d8d4d6
+PINK          =#c8c4c6
+LINE          =#14141a
+GREEN         =#b0b2b0
+VIBRANT_GREEN =#c8cac8
+BLUE          =#c8c8d6
+NORD_BLUE     =#b8b8c8
+YELLOW        =#c8c4b8
+SUN           =#d4cfc8
+PURPLE        =#909098
+DARK_PURPLE   =#474752
+TEAL          =#a8b0b0
+ORANGE        =#d0ccc8
+CYAN          =#c0c8cc
+STATUSLINE_BG =#08080a
+LIGHTBG       =#0f0f12
+PMENU_BG      =#2a2a30
+FOLDER_BG     =#4f4f5c
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#363640

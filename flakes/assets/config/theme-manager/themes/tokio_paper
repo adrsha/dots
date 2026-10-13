@@ -1,0 +1,55 @@
+# base_16
+VARIANT=light
+WALLPAPER=/home/chilly/Pictures/walls/api/e82xxr.jpg
+
+BASE00=#ebe8f0
+BASE01=#e0dce8
+BASE02=#d5cfde
+BASE03=#c8c0d6
+BASE04=#786e8c
+BASE05=#1a1624
+BASE06=#2b243b
+BASE07=#0d0a12
+BASE08=#d6456a
+BASE09=#bd5e3a
+BASE0A=#a68529
+BASE0B=#2b8c68
+BASE0C=#257ca6
+BASE0D=#4b3db8
+BASE0E=#8c3db8
+BASE0F=#a63a82
+# base_30
+WHITE         =#1a1624
+DARKER_BLACK  =#f5f3f8
+BLACK         =#ebe8f0
+BLACK2        =#e5e1eb
+ONE_BG        =#e0dce8
+ONE_BG2       =#dad4e3
+ONE_BG3       =#d5cfde
+GREY          =#c8c0d6
+GREY_FG       =#9085a6
+GREY_FG2      =#786e8c
+LIGHT_GREY    =#473e59
+RED           =#d6456a
+BABY_PINK     =#e87da0
+PINK          =#a63a82
+LINE          =#dad4e3
+GREEN         =#2b8c68
+VIBRANT_GREEN =#26b87f
+BLUE          =#4b3db8
+NORD_BLUE     =#257ca6
+YELLOW        =#a68529
+SUN           =#bd5e3a
+PURPLE        =#8c3db8
+DARK_PURPLE   =#5c247a
+TEAL          =#2da3a6
+ORANGE        =#bd5e3a
+CYAN          =#42998c
+STATUSLINE_BG =#e5e1eb
+LIGHTBG       =#e0dce8
+PMENU_BG      =#4b3db8
+FOLDER_BG     =#257ca6
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#c8c0d6

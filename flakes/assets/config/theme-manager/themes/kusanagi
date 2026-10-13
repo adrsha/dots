@@ -1,0 +1,55 @@
+#base16
+VARIANT=dark
+WALLPAPER=none
+BASE00=#070b12
+BASE01=#0e1421
+BASE02=#172033
+BASE03=#2b3a54
+BASE04=#3e5375
+BASE05=#5cd6ff
+BASE06=#99e6ff
+BASE07=#e6f9ff
+BASE08=#ff3b3b
+BASE09=#ff9433
+BASE0A=#00ffaa
+BASE0B=#409ccc
+BASE0C=#00bfff
+BASE0D=#33b5ff
+BASE0E=#8073ff
+BASE0F=#ff5500
+
+#base30
+WHITE         =#99e6ff
+DARKER_BLACK  =#030508
+BLACK         =#070b12
+BLACK2        =#0a0f1a
+ONE_BG        =#0e1421
+ONE_BG2       =#121b2b
+ONE_BG3       =#172033
+GREY          =#2b3a54
+GREY_FG       =#344666
+GREY_FG2      =#3e5375
+LIGHT_GREY    =#5775a4
+RED           =#ff3b3b
+BABY_PINK     =#e65585
+PINK          =#b32b53
+LINE          =#121b2b
+GREEN         =#409ccc
+VIBRANT_GREEN =#00ffaa
+BLUE          =#33b5ff
+NORD_BLUE     =#00bfff
+YELLOW        =#00ffaa
+SUN           =#ff9433
+PURPLE        =#8073ff
+DARK_PURPLE   =#4d42b3
+TEAL          =#3df2ff
+ORANGE        =#ff5500
+CYAN          =#73e6ff
+STATUSLINE_BG =#05080d
+LIGHTBG       =#0e1421
+PMENU_BG      =#5cd6ff
+FOLDER_BG     =#00bfff
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#2b3a54

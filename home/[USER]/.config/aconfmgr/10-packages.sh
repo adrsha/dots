@@ -8,6 +8,7 @@ AddPackage android-tools # Android platform tools
 AddPackage autoconf # A GNU tool for automatically configuring source code
 AddPackage automake # A GNU tool for automatically creating Makefiles
 AddPackage awww # An Answer to your Wayland Wallpaper Woes
+AddPackage npm # An Answer to your Wayland Wallpaper Woes
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage base-devel # Basic tools to build Arch Linux packages
 AddPackage bat # Cat clone with syntax highlighting and git integration

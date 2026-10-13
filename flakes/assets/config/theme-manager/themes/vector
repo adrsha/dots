@@ -1,0 +1,56 @@
+# deep_sea theme — fixed
+VARIANT=dark
+WALLPAPER=none
+
+# base_16
+BASE00=#050708
+BASE01=#0c0f12
+BASE02=#141a1c
+BASE03=#1d2629
+BASE04=#3a4c52
+BASE05=#9eb3ac
+BASE06=#b3ccc6
+BASE07=#d9ebe7
+BASE08=#c25a5a
+BASE09=#8a7060
+BASE0A=#7da198
+BASE0B=#3d8a78
+BASE0C=#3d9e8a
+BASE0D=#5d9e96
+BASE0E=#7a8090
+BASE0F=#a07880
+# base_30
+WHITE         =#b3ccc6
+DARKER_BLACK  =#010203
+BLACK         =#050708
+BLACK2        =#080b0c
+ONE_BG        =#0c0f12
+ONE_BG2       =#101417
+ONE_BG3       =#141a1c
+GREY          =#1d2629
+GREY_FG       =#2e3d42
+GREY_FG2      =#3a4c52
+LIGHT_GREY    =#536c75
+RED           =#c25a5a
+BABY_PINK     =#b07888
+PINK          =#8a5a68
+LINE          =#101417
+GREEN         =#3d8a78
+VIBRANT_GREEN =#4abf9e
+BLUE=#5d9e96
+NORD_BLUE     =#4a7a8a
+YELLOW        =#7da198
+SUN           =#8a7060
+PURPLE        =#7a8090
+DARK_PURPLE   =#3c4145
+TEAL          =#3d9e8a
+ORANGE        =#9e7850
+CYAN          =#8fb3aa
+STATUSLINE_BG =#030405
+LIGHTBG       =#0c0f12
+PMENU_BG      =#1d2e32
+FOLDER_BG     =#4a7a8a
+
+CORNER_RADIUS=20
+BORDER_SIZE=0
+BORDER_COLOR=#1d2629
